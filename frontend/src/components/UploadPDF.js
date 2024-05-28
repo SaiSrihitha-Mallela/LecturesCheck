@@ -88,7 +88,7 @@ const UploadPDF = () => {
 
             </div>
         </>
-     );
+     );//
 }
  
 export default UploadPDF;
