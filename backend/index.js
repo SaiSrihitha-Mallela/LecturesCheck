@@ -1,22 +1,34 @@
 
 let express = require("express");
 let app = express();
-let allroutes = require("./AllRoutes");
+let allroutes = require("./routes/AllRoutes");
+const session = require('express-session');
 const mongoose = require( "mongoose" );
+const path = require("path");
 const cors = require( 'cors' );
+
 const dotenv = require( "dotenv" );
 dotenv.config();
 
 app.use(express.json());
 
+
 app.use(cors({credentials:true, origin:'http://localhost:3000'}));
 
+
 app.use("/api",allroutes);
-app.use((req,res)=>{
-    console.log("Request received at"+(new Date()));
+////api/////////////////////////////////////////
+app.use("/",async(req,res)=>{
     res.send("wellcome to dune university");
 });
 
+
+
+
+ 
+
+
+// mongodb connection----------------------------------------------
 let db = async()=>
 {
     try{
@@ -34,3 +46,5 @@ db();
 
 
 app.listen(5000,()=>{console.log("Backend server listening at port http://localhost:5000")});
+
+

@@ -36,8 +36,8 @@ const LoginForm = () => {
     const handleTogglePassword = () => {
         setShowPassword(!showPassword);
     };
-    const customPrimaryColor = '#000000';
-    const customSecondaryColor = '#fbf1fb';
+    const customPrimaryColor = '#08033d';
+    const customSecondaryColor = '#ffffff';
 
     return (
         <div>
@@ -53,7 +53,7 @@ const LoginForm = () => {
             </nav>
             
             <div className="container-fluid h-100 d-flex align-items-center justify-content-center pt-5">
-                            <div className="card pt-4" style={{ width: '400px', height: '380px' }}>
+                            <div className="card pt-4" style={{ width: '380px', height: '380px' }}>
                                 <div className="card-body">
                                     <h2 className="card-title">Login</h2>
                                     <br></br>
