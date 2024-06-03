@@ -6,7 +6,7 @@ import "./css/Sidebar.css";
 
 const Sidebar = () => {
     return (
-        <div className="sidebar fixed border-end border-dark">
+        <div className="sidebar fixed border-end ">
             <ul>
                 <li>
                     <a href="/Home">Home</a>
@@ -22,7 +22,7 @@ const Sidebar = () => {
                 </li>
                 {/* <br> */}
                 {/* </br> */}
-                <li className="nav-item  ">
+                {/* <li className="nav-item  ">
                     <Link to='/UploadVideo'>
                         <button className="btn font-monospace" >Upload Video</button>
                     </Link> 
@@ -31,7 +31,7 @@ const Sidebar = () => {
                     <Link to='/UploadPDF'>
                         <button className="btn font-monospace">Upload PDF</button>
                     </Link>
-                </li>
+                </li> */}
             </ul>
         </div>
     );

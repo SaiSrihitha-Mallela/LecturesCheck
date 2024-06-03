@@ -15,7 +15,7 @@ const Navbar = () => {
     
 
     
-    const customPrimaryColor = '#020135';
+    const customPrimaryColor = '#27012d';
     const customSecondaryColor = '#ffffff';
     const custom3rdColor = '#f4cd0b';
 
@@ -43,6 +43,8 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
 
                         <ul className="navbar-nav">
+
+                            
 
                             {/* <li className="nav-item pe-3 ">
                                 <Link to='/video'>

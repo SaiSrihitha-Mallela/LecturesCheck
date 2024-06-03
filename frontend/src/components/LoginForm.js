@@ -36,7 +36,7 @@ const LoginForm = () => {
     const handleTogglePassword = () => {
         setShowPassword(!showPassword);
     };
-    const customPrimaryColor = '#08033d';
+    const customPrimaryColor = '#27012d';
     const customSecondaryColor = '#ffffff';
 
     return (
@@ -73,7 +73,7 @@ const LoginForm = () => {
                                         </div>
                                         <br>
                                         </br>
-                                        <button type="submit" className="btn btn-dark">LOGIN</button>
+                                        <button type="submit" className="btn btn-dark" >LOGIN</button>
                                         
                                     </form>
                                     {/* {error && <p className="text-danger">{error}</p>} */}
