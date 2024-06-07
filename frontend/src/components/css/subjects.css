@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+
+}
+
+.sub-serv {
+    padding-top: 2%;
+    color: rgb(240, 240, 240);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/* Float four columns side by side */
+.sub-column {
+    float: left;
+    /* width: 25%; */
+    padding: 0 1px;
+    /* padding-left: 50%; */
+}
+
+/* Remove extra left and right margins, due to padding */
+.sub-row{
+    /* margin: 0 5px; */
+    margin-top: 0%;
+}
+
+/* Clear floats after the columns */
+.sub-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+    .sub-column {
+        /* width: 50%; */
+        display: block;
+        /* margin-bottom: 100000px; */
+
+
+    }
+}
+
+/* Style the counter cards */
+.sub-cards {
+    box-shadow: 0 4px 8px 0 rgb(190, 188, 188);
+    padding-top: 20px;
+    /* padding-bottom: 10px; */
+    text-align: center;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    /* margin-left: 350px; */
+    width: 30%;
+    height: 115%;
+    border-radius: 2%;
+    margin-top: 3%;
+    
+
+}
+
+.Ul-list
+{
+    
+    padding-left: 20%;
+    padding-top: 8px;
+}
+
+.list{
+    color: black;
+    font-size: 20px;
+    text-align: start;
+    gap: 0%;
+    /* padding-left: 10%; */
+    
+    
+}
+ .Ul-list,
+.list::marker
+{
+    color: #6e2d74;
+         /* color: rgb(249, 249, 249);  */
+} 
+
+
+

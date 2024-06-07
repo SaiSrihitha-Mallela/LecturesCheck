@@ -29,7 +29,7 @@ const Navbar = () => {
             <nav className="navbar sticky-top border-bottom border-body navbar-expand-lg custom-navbar" style={{ backgroundColor: customPrimaryColor}}>
                 <div className="container-fluid">
                     {/* <Link to="/"> */}
-                    <a className="navbar-brand " href="#" style={{ color: customSecondaryColor }}>
+                    <a className="navbar-brand " href="/Home" style={{ color: customSecondaryColor }}>
                         <img src="/dune.jpg" alt="" width="50" height="40" className="d-inline-block align-text-top " />
                         <br></br>
                         Dune state University

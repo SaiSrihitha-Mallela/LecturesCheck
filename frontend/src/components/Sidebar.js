@@ -9,17 +9,39 @@ const Sidebar = () => {
         <div className="sidebar fixed border-end ">
             <ul>
                 <li>
-                    <a href="/Home">Home</a>
+                    <a href="/Home" className='dropbtn'>Home</a>
                 </li>
                 {/* <li><a href="#news">News</a></li> */}
                 <li className="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">OS</a>
+                    <a href="javascript:void(0)" className="dropbtn">1st Year</a>
                     <div className="dropdown-content">
-                        <a href="/Unit1">UNIT 1</a>
-                        <a href="#">UNIT 2</a>
-                        <a href="#">UNIT 3</a>
+                        <a href="#">NO subject found</a>
+                        
                     </div>
                 </li>
+                <li className='dropdown'>
+                    <a href='javascript:void(0)' className="dropbtn">2nd Year</a>
+                    <div className="dropdown-content">
+                        <a href="/FirstSem">sem 1</a>
+                        <a href="/SecondSem">sem 2</a>
+                    </div>
+
+                </li>
+                <li className="dropdown">
+                    <a href="javascript:void(0)" className="dropbtn">3rd Year</a>
+                    <div className="dropdown-content">
+                        <a href="#">NO subject found</a>
+
+                    </div>
+                </li>
+                <li className="dropdown">
+                    <a href="javascript:void(0)" className="dropbtn">4th Year</a>
+                    <div className="dropdown-content">
+                        <a href="#">NO subject found</a>
+
+                    </div>
+                </li>
+
                 {/* <br> */}
                 {/* </br> */}
                 {/* <li className="nav-item  ">

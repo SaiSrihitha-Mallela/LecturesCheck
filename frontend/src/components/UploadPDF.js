@@ -1,6 +1,6 @@
 import { useState,useEffect} from "react";
 import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
+// import Sidebar from "./Sidebar";
 import "./css/Uploadpdf.css";
 import axios from "axios";
 
@@ -53,7 +53,7 @@ const UploadPDF = () => {
     return ( 
         <>
             <Navbar />
-            <Sidebar />
+            {/* <Sidebar /> */}
             <div className="uploadpdf" >
                 <form className="pdfform" onSubmit={submitImage}>
                     <h4>Upload PDF</h4>

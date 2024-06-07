@@ -1,20 +1,15 @@
-import React from 'react';
-import UploadPDF from '../UploadPDF';
-import UploadVideo from '../UploadVideo';
+import React from "react";
+import UploadPDF from "../UploadPDF";
 
 
 const Unit1 = () => {
-
-
-    return ( 
+    return (
         <>
-           <UploadPDF/>
-           <UploadVideo/>
-          
-           
+            <h1>unit 1</h1>
+            <UploadPDF/>
+            
         </>
-     );
+    );
 }
 
- 
 export default Unit1;
