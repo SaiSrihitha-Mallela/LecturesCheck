@@ -7,6 +7,7 @@ let allroutes = express.Router();
 const bcrypt = require('bcrypt');
 allroutes.use(express.json());
 allroutes.use("/files", express.static("files"));
+allroutes.use("/videos",express.static("videos"));
 
 
 

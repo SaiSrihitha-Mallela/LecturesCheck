@@ -67,7 +67,7 @@ const UploadPDF = () => {
                     </button>
 
                 </form>
-                {/* <div className="uploaded">
+                <div className="uploaded">
                     <h4>Uploaded PDF:</h4>
                     <div className="output-div">
                         {allImage==null ? "" :allImage.map((data)=>{
@@ -81,7 +81,7 @@ const UploadPDF = () => {
                         })}
 
                     </div>
-                </div> */}
+                </div>
                 
 
                 

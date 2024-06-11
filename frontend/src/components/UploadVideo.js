@@ -9,7 +9,7 @@ import axios from "axios";
 const UploadVideo = () => {
     const [title, setTitle] = useState('');
     const [file, setFile] = useState('');
-    const [allImage, setAllImage] = useState(null);
+    const [allImages, setAllImages] = useState(null);
     // const [nextPage,setNextpage] = useState(' ');
 
 
@@ -20,7 +20,7 @@ const UploadVideo = () => {
     const getVideo = async () => {
         const result = await axios.get("http://localhost:5000/api/getVideos");
         console.log(result.data.data);
-        setAllImage(result.data.data);
+        setAllImages(result.data.data);
 
     }
 
@@ -70,10 +70,10 @@ const UploadVideo = () => {
                     </button>
 
                 </form>
-                {/* <div className="uploaded">
+                <div className="uploaded">
                     <h4>Uploaded Video:</h4>
                     <div className="output-div">
-                        {allImage == null ? "" : allImage.map((data) => {
+                        {allImages == null ? "" : allImages.map((data) => {
                             return (
                                 <div className="inner-div">
                                     <h6>Titile: {data.title}</h6>
@@ -84,7 +84,7 @@ const UploadVideo = () => {
                         })}
 
                     </div>
-                </div> */}
+                </div>
 
 
 
