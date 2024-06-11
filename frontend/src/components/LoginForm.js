@@ -52,7 +52,7 @@ const LoginForm = () => {
                 </div>
             </nav>
             
-            <div className="container-fluid h-100 d-flex align-items-center justify-content-center pt-5">
+            <div className="container-fluid h-100 d-flex align-items-center justify-content-center pt-5 mt-5">
                             <div className="card pt-4" style={{ width: '380px', height: '380px' }}>
                                 <div className="card-body">
                                     <h2 className="card-title">Login</h2>

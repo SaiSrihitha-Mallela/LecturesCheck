@@ -1,6 +1,9 @@
-*{
+* {
     box-sizing: border-box;
+}
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .sub-serv {
@@ -8,82 +11,110 @@
     color: rgb(240, 240, 240);
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-
+.heading {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-/* Float four columns side by side */
+.sub-row {
+    margin-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .sub-column {
-    float: left;
-    /* width: 25%; */
-    padding: 0 1px;
-    /* padding-left: 50%; */
+    flex: 1;
+    max-width: 30%;
+    padding: 0 15px;
+    margin-bottom: 20px;
 }
 
-/* Remove extra left and right margins, due to padding */
-.sub-row{
-    /* margin: 0 5px; */
-    margin-top: 0%;
+.sub--column {
+    flex: 2;
+    max-width: 100%;
+    padding: 0 15px;
+    margin-bottom: 200px;
 }
 
-/* Clear floats after the columns */
-.sub-row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Responsive columns */
-@media screen and (max-width: 600px) {
-    .sub-column {
-        /* width: 50%; */
-        display: block;
-        /* margin-bottom: 100000px; */
-
-
-    }
-}
-
-/* Style the counter cards */
-.sub-cards {
-    box-shadow: 0 4px 8px 0 rgb(190, 188, 188);
-    padding-top: 20px;
-    /* padding-bottom: 10px; */
+.sub-cards
+{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    padding: 20px;
     text-align: center;
     background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    /* margin-left: 350px; */
-    width: 30%;
-    height: 115%;
-    border-radius: 2%;
-    margin-top: 3%;
-    
+    color: #000000;
+    border-radius: 5px;
+    width: 100%;
 
 }
-
-.Ul-list
-{
-    
-    padding-left: 20%;
-    padding-top: 8px;
+.sub--cards {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    /* padding: 20px; */
+    margin-left: 5%;
+    text-align: center;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 5px;
+    width: 103%;
+    height: 110%;
+    /* margin-bottom: %; */
 }
 
-.list{
-    color: black;
-    font-size: 20px;
-    text-align: start;
-    gap: 0%;
-    /* padding-left: 10%; */
-    
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list {
+    margin-bottom: 10px;
+}
+
+.sub-btn {
+    color: #470254;
+    background-color: #ffffff;
+    font-size: 18px;
+    font-weight: 300%;
+    border: none;
+    text-align: left;
+    width: 100%;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sub-btn:hover {
+    background-color: #410348;
+    color: #ffffff;
+}
+
+.sub-card-body {
+    text-align: left;
+    /* padding: 20px; */
+    font-size: 16px;
+    /* line-height: 1.5; */
+    /* width: 100%; */
     
 }
- .Ul-list,
-.list::marker
-{
-    color: #6e2d74;
-         /* color: rgb(249, 249, 249);  */
-} 
 
+/* @media (max-width: 768px) {
 
+    .sub-column
+    {
+        max-width: 100%;
+    }
+    .sub--column {
+        max-width: 200%;
+        flex: 100%;
+    }
 
+    .sub-cards,
+    .sub--cards {
+        width: 100%;
+    }
+
+    .heading {
+        font-size: 24px;
+    }
+    
+} */

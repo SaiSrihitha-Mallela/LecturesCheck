@@ -10,6 +10,7 @@ const UploadVideo = () => {
     const [title, setTitle] = useState('');
     const [file, setFile] = useState('');
     const [allImage, setAllImage] = useState(null);
+    // const [nextPage,setNextpage] = useState(' ');
 
 
     useEffect(() => {
@@ -29,9 +30,10 @@ const UploadVideo = () => {
         formdata.append("title", title);
         formdata.append("file", file);
         console.log(title, file);
-        console.log("hey")
+        console.log("sending video")
         const result = await axios.post("http://localhost:5000/api/Uploadvideos", formdata, { headers: { "Content-Type": "multipart/form-data" }, });
-        console.log("hi");
+        console.log("video has been sent ");
+        
         console.log(result);
 
 

@@ -8,13 +8,16 @@
 
 .pdfform{
     padding: 50px;
-    border: 1px solid rgb(0, 0, 0);
-    width: 30%;
+    border: 1px solid rgb(18, 17, 18);
+    /* background-color: #f4edf3; */
+    width: 100%;
     text-align: center;
+
+    
 
 }
 .form-control{
-    border-color: rgb(0, 0, 0) !important;
+    border-color: rgb(49, 1, 46) !important;
 }
 
 

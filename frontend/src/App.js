@@ -14,6 +14,8 @@ import Unit2 from './components/Units/Unit2';
 import Unit3 from './components/Units/Unit3';
 import Unit4 from './components/Units/Unit4';
 import Unit5 from './components/Units/Unit5';
+import ADE from './components/subjects/Subject/ADE';
+import IML from './components/subjects/Subject/IML';
 
 
 
@@ -41,6 +43,8 @@ function App() {
         <Route path='/firstsem' element={<FirstSem/>}/>
         <Route path="/secondsem" element={<SecondSem/>}/>
         <Route path='/coa' element={<COA/>}/>
+        <Route path='/ade' element={<ADE/>}/>
+        <Route path='/iml' element={<IML/>}/>
         <Route path='/unit1' element={<Unit1/>}/>
         <Route path='/unit2' element={<Unit2/>}/>
         <Route path='/unit3' element={<Unit3/>}/>

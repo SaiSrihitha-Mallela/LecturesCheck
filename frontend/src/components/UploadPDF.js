@@ -1,5 +1,5 @@
 import { useState,useEffect} from "react";
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 // import Sidebar from "./Sidebar";
 import "./css/Uploadpdf.css";
 import axios from "axios";
@@ -28,9 +28,9 @@ const UploadPDF = () => {
         formdata.append("title", title);
         formdata.append("file",file);
         console.log(title,file);
-        console.log("hey")
+        console.log("pdf is uploading")
         const result = await axios.post("http://localhost:5000/api/uploadfiles",formdata,{headers:{"Content-Type":"multipart/form-data"},});
-        console.log("hi");
+        console.log("pdf is uploaded ");
         console.log(result);
 
 
@@ -52,7 +52,7 @@ const UploadPDF = () => {
 
     return ( 
         <>
-            <Navbar />
+            {/* <Navbar /> */}
             {/* <Sidebar /> */}
             <div className="uploadpdf" >
                 <form className="pdfform" onSubmit={submitImage}>
