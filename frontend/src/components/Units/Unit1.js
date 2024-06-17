@@ -1,20 +1,24 @@
 import React from "react";
 import { useState } from "react";
-import UploadVideo from "../UploadVideo";
 import UploadPDF from "../UploadPDF";
+import UploadVideo from "../UploadVideo";
+
 
 
 const Unit1 = () => {
+    const [isVideoUploaded,setIsVideoUploaded] = useState(false);
+
+    const handelVideoSubmit = ()=>{
+        setIsVideoUploaded(true);
+    };
 
        return (
         <>
             <h6>unit 1</h6>
             <div>
-                <UploadVideo/>
+                   {isVideoUploaded ? <UploadPDF/> : <UploadVideo onSubmit={handelVideoSubmit}/> }
             </div>
-            <div>
-                <UploadPDF/>
-            </div>
+        
            
             
             

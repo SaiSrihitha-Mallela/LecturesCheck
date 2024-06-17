@@ -3,6 +3,7 @@ const { User, Pdf,Video} = require("../Models/AllSchema");
 const fs = require("fs");
 const path = require("path");
 const multer = require('multer');
+
 let allroutes = express.Router();
 const bcrypt = require('bcrypt');
 allroutes.use(express.json());
@@ -108,50 +109,48 @@ allroutes.get("/getfiles", async (req, res) => {
 // const{all} = require("proxy-addr");
 
 const Uploadstorage = multer.diskStorage({
-    destination: function(req,file,cb)
-    {
-        cb(null,'./videos');
+    destination: function (req, file, cb) {
+        cb(null, './videos');
         console.log("u reached backend video file");
     },
-    filename:function(req,file,cb)
-    {
+    filename: function (req, file, cb) {
         const uniqueSuffix = Date.now();
-        cb(null, uniqueSuffix+file.originalname);
+        cb(null, uniqueSuffix + file.originalname);
         console.log("you reacedbackend video file");
 
     },
 })
 
-const Upload = multer({storage:Uploadstorage});
-allroutes.post("/Uploadvideos",Upload.single("file"),async(req,res)=>{
-    
+const Upload = multer({ storage: Uploadstorage });
+allroutes.post("/Uploadvideos", Upload.single("file"), async (req, res) => {
+
     console.log(req.file);
     const title = req.body.title;
     const fileName = req.file.filename;
-    try{
+    try {
         await Video.create({
-            title:title,
-            video:fileName
+            title: title,
+            video: fileName
         });
-        res.json({status:"ok"})
-    }catch(error){
-        console.error("Error Uploading file:",error);
-        res.status(500).json({status:"error",message:"Failed to upload file"});
+        res.json({ status: "ok" })
+    } catch (error) {
+        console.error("Error Uploading file:", error);
+        res.status(500).json({ status: "error", message: "Failed to upload file" });
     }
-    
+
 });
 
-allroutes.get("/getvideos", async(req,res)=>{
-    try{
-        Video.find({}).then((data)=>{
-            res.send({status:"ok",data:data});
+allroutes.get("/getvideos", async (req, res) => {
+    try {
+        Video.find({}).then((data) => {
+            res.send({ status: "ok", data: data });
         });
-    
-    }catch(error)
-    {
+
+    } catch (error) {
 
     }
 });
+
 
 
 

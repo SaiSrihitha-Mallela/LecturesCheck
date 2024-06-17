@@ -1,3 +1,4 @@
+const { text } = require('body-parser');
 let mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
@@ -15,11 +16,15 @@ const videoDetailsSchema = new mongoose.Schema({
     video:String,
     title:String,
 
-})
+});
+
+
 
 const Video= mongoose.model('Video', videoDetailsSchema);
 const User = mongoose.model('User', UserSchema);
 const Pdf = mongoose.model("PdfDetails",pdfDetailsSchema);
+
+
 
 
 

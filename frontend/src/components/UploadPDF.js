@@ -10,6 +10,8 @@ const UploadPDF = () => {
     const [file, setFile] = useState('');
     const[allImage,setAllImage] = useState(null);
 
+    
+
 
     useEffect(()=>{
         getPdf();
@@ -46,9 +48,6 @@ const UploadPDF = () => {
     }
 
     
-    
-
-    
 
     return ( 
         <>
@@ -61,6 +60,7 @@ const UploadPDF = () => {
                     
                     <input type="text" className="form-control pt-2 mt-2 "  onChange={(e) =>setTitle(e.target.value)} placeholder="Title" id="title" required />
                     <input type="file" className="form-control mt-4" id="file" accept="application/pdf" required onChange={(e)=>setFile(e.target.files[0])}/>
+                    
                     
                     <button className="btn btn-dark mt-3" type="submit">
                         Submit
@@ -82,10 +82,6 @@ const UploadPDF = () => {
 
                     </div>
                 </div>
-                
-
-                
-
             </div>
         </>
      );
