@@ -222,11 +222,11 @@ const convertVideoToAudio = (inputVideo, outputAudio) => {
 const uploadAudioToAssemblyAI = async (filePath) => {
     const formData = new FormData();
     formData.append("audio", fs.createReadStream(filePath));
-
+    const Keys = " 4f1b7c3dc56140459d05a750e1e2563a";
     try {
         const response = await axios.post("https://api.assemblyai.com/v2/upload", formData, {
             headers: {
-                "authorization": "443e85486085485189193ac8a9867902",
+                "authorization": Keys,
                 ...formData.getHeaders(),
             },
         });
@@ -239,11 +239,12 @@ const uploadAudioToAssemblyAI = async (filePath) => {
 
 const transcribeAudioToText = async (audioUrl) => {
     const config = { audio_url: audioUrl };
+    const Keys =" 4f1b7c3dc56140459d05a750e1e2563a";
 
     try {
         const response = await axios.post("https://api.assemblyai.com/v2/transcript", config, {
             headers: {
-                "authorization": "443e85486085485189193ac8a9867902",
+                "authorization":Keys,
             },
         });
         const transcriptId = response.data.id;
@@ -252,7 +253,7 @@ const transcribeAudioToText = async (audioUrl) => {
         while (true) {
             const transcriptResponse = await axios.get(`https://api.assemblyai.com/v2/transcript/${transcriptId}`, {
                 headers: {
-                "authorization": "443e85486085485189193ac8a9867902",
+                "authorization": Keys,
             },
       });
         transcript = transcriptResponse.data;
