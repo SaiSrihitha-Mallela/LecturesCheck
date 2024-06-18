@@ -1,5 +1,5 @@
 let express = require("express");
-const { User, Pdf,Video} = require("../Models/AllSchema");
+const { User, Pdf, Video } = require("../Models/AllSchema");
 const fs = require("fs");
 const path = require("path");
 const multer = require('multer');
@@ -8,7 +8,7 @@ let allroutes = express.Router();
 const bcrypt = require('bcrypt');
 allroutes.use(express.json());
 allroutes.use("/files", express.static("files"));
-allroutes.use("/videos",express.static("videos"));
+allroutes.use("/videos", express.static("videos"));
 
 
 

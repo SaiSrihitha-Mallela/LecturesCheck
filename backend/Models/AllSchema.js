@@ -7,26 +7,39 @@ const UserSchema = new mongoose.Schema({
 });
 
 const pdfDetailsSchema = new mongoose.Schema({
-    pdf:String,
-    title:String,
-}
-);
+   pdf:
+   {
+    type:String,
+    required:true
+   },
+   title:
+   {
+    type:String,
+    required:true
+   }
+},{timestamps:true}); ///this will add createdAt and UpdateAt fields
 
 const videoDetailsSchema = new mongoose.Schema({
-    video:String,
-    title:String,
+   video:{
+    type:String,
+    required:true
+   },
+   title:{
+    type:String,
+    required:true
+   }
 
-});
+},{timestamps:true});
 
 
 
-const Video= mongoose.model('Video', videoDetailsSchema);
+const Video = mongoose.model('Video', videoDetailsSchema);
 const User = mongoose.model('User', UserSchema);
-const Pdf = mongoose.model("PdfDetails",pdfDetailsSchema);
+const Pdf = mongoose.model("PdfDetails", pdfDetailsSchema);
 
 
 
 
 
 
-module.exports ={User,Pdf,Video};
+module.exports = { User, Pdf, Video };
