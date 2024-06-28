@@ -18,11 +18,11 @@ const LoginForm = () => {
     };
 
     const handleSubmit = async(event) => {
-        event.preventDefault();
+        event.preventDefault();//// it will prevent whole page to reload when this event is occured 
         try{
             const response = await axios.post("http://localhost:5000/api/login",{username,password});
             console.log(response.data);
-
+            localStorage.setItem('token',response.data.token);
             window.location.href = '/home';
 
         }catch(error)
@@ -53,7 +53,7 @@ const LoginForm = () => {
             </nav>
             
             <div className="container-fluid h-100 d-flex align-items-center justify-content-center pt-5 mt-5">
-                            <div className="card pt-4" style={{ width: '380px', height: '380px' }}>
+                <div className="card pt-4" style={{ width: '380px', height: '380px', boxShadow: "0 8px 10px 0 rgba(0, 0, 0, 0.1)" }}>
                                 <div className="card-body">
                                     <h2 className="card-title">Login</h2>
                                     <br></br>
@@ -89,107 +89,3 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React,{useEffect,useState} from "react";
-// import axios from "axios";
-
-
-
-
-// function LoginForm()
-// {
-//     const [username,setUsername] = useState('');
-//     const [password,setPassword] = useState('');
-//     const [error, setError] = useState('');
-
-//     useEffect(()=>{
-//         if(username.length === 10)
-//         {
-//             setError("username must be at least 10 characters");
-
-//         }
-//         else{
-//             setError('');
-//         }
-//     }, [username]//In this case, [username] means that the effect will re-run whenever the username state variable changes. 
-
-//     );
-
-//     useEffect(()=>
-//     {
-//         if(password.length<4)
-//         {
-//             setError("password cannot be set");
-//         }
-//         else{
-//             setError('');
-//         }
-//     },[password]
-
-//     );
-
-//     const handleLogin = async () => {
-//         try {
-//             const response = await axios.post('http://localhost:5000/login', { username, password });
-//             console.log(response.data);
-//         } catch (error) {
-//             console.error('Login error:', error.response.data.message);
-//         }
-//     };
-
-//     const handelUsernameChange =(event) =>
-//     {
-//         setUsername(event.target.value);
-//     };
-   
-//     const handelPasswordChange =(event)=>
-//     {
-//         setPassword(event.target.value);
-//     };
-
-//     return(
-//         <div className="cover">
-//             <h1>LoginForm</h1>
-//             <form>
-//                 <label htmlFor = "userName">UserName</label><br/>
-//                 <input type="text" id="userName" value={username} name="username-login" onChange={handelUsernameChange} placeholder="username"></input>
-//                 <br></br>
-//                 <label htmlFor="passWord">Password</label>
-//                 <br></br>
-//                 <input type="password" id="passWord"  value={password} name="password-login" onChange={handelPasswordChange} placeholder="password"></input>
-//                 <br></br>
-//                 <div className="login-btn" onClick={popup}>Login</div>
-               
-//                 {error && <p>{error}</p>}
-//             </form>
-
-//             <div className={popupStyle}>
-//                 <h3>Login Failed</h3>
-//                 <p>Username or password incorrect</p>
-//             </div>
-//         </div>
-
-//     )
-// }
-//     export default LoginForm; 

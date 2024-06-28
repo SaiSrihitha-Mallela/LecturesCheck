@@ -22,18 +22,11 @@ app.use("/",async(req,res)=>{
     res.send("wellcome to dune university");
 });
 
-
-
-
-
-
-
-
 // mongodb connection----------------------------------------------
 let db = async()=>
 {
     try{
-        console.log(process.env.DBURI);
+        // console.log(process.env.DBURI);
         await mongoose.connect(process.env.DBURI);
         console.log("connected to database");
     }
