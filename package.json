@@ -1,0 +1,27 @@
+{
+  "name": "lecturescheck",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saisrhitha/lecturescheck.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Saisrhitha/lecturescheck/issues"
+  },
+  "homepage": "https://github.com/Saisrhitha/lecturescheck#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
