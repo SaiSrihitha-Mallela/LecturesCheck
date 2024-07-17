@@ -1,35 +1,36 @@
+
 const { text } = require('body-parser');
 let mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
-    username: String,
-    password: String
+   username: String,
+   password: String
 });
 
 const pdfDetailsSchema = new mongoose.Schema({
    pdf:
    {
-    type:String,
-    required:true
+      type: String,
+      required: true
    },
    title:
    {
-    type:String,
-    required:true
+      type: String,
+      required: true
    }
-},{timestamps:true}); ///this will add createdAt and UpdateAt fields
+}, { timestamps: true }); ///this will add createdAt and UpdateAt fields
 
 const videoDetailsSchema = new mongoose.Schema({
-   video:{
-    type:String,
-    required:true
+   video: {
+      type: String,
+      required: true
    },
-   title:{
-    type:String,
-    required:true
+   title: {
+      type: String,
+      required: true
    }
 
-},{timestamps:true});
+}, { timestamps: true });
 
 
 

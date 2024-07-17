@@ -1,0 +1,128 @@
+
+
+Operating System Structures 
+Operating System (OS) structure refers to the way an operating system is designed and organized to 
+manage  hardware  and  software  resources,  provide  services  to  users  and  applications,  and  ensure 
+efficient  and  secure  operation  of  a  computer system. There are several different approaches to 
+operating system structure, each with its own advantages and disadvantages. 
+Different types of structures implementing Operating Systems as mentioned below. 
+1. Simple Structure 
+2. Layered Structure 
+3. Micro Kernel Structure 
+4. Modular Structure 
+5. Hybrid Structure 
+ 
+Simple Structure 
+It is the simplest Operating System Structure and is not well defined. It can only be used for small and 
+limited systems. In this structure, the interfaces and levels of functionality are well separated,hence 
+programs can access I/O routines which can cause unauthorized access to I/O routines. 
+This structure is implemented in MS-DOS operating system.The MS-DOS operating System is made up 
+of various layers, each with its own set of functions. 
+ 
+ 
+Advantages of Simple Structure 
+ It is easy to develop because of the limited number of interfaces and layers. 
+ Offers good performance due to lesser layers between hardware and applications. 
+
+ Minimal overhead, suitable for resource-constrained environments. 
+Disadvantages of Simple Structure 
+ If one user program fails, the entire operating system crashes. 
+ Limited functionality. 
+ Abstraction or data hiding is not present as layers are connected and communicate with each 
+other. 
+ Layers  can  access  the  processes  going  in  the Operating  System,  which  can  lead  to  data 
+modification and can cause Operating System to crash. 
+ 
+Layered Structure 
+In this type of structure, OS is divided into layers or levels. The hardware is on the bottom layer (layer 
+0), while the user interface is on the top layer (layer N). These layers are arranged in a hierarchical 
+way in which the top-level layers use the functionalities of their lower-level levels. Example:Linux 
+The following are some of the key characteristics of a layered operating system structure: 
+ Each  layer  is  responsible  for  a  specific  set  of  tasks.  This  makes  it  easier  to  understand, 
+develop, and maintain the operating system. 
+ Layers  are  typically  arranged  in  a  hierarchy.  This  means  that  each  layer  can  only  use  the 
+services provided by the layers below it. 
+ Layers  are  independent  of  each  other.  This  means  that  a  change  to  one  layer  should  not 
+affect the other layers. 
+Below is the Image illustrating the Layered structure in OS: 
+ 
+
+Advantages of Layered Structure 
+ A layered structure  is highly modular, meaning that each layer is responsible  for a specific 
+set of tasks. This makes it easier to understand, develop, and maintain the operating system. 
+ Each layer has its functionalities, so work tasks are isolated, and abstraction is present up to 
+some level. 
+ Debugging is easier as lower layers are debugged, and then upper layers are checked. 
+Disadvantages of Layered Structure 
+ In Layered Structure, layering causes degradation in performance. 
+ It takes careful planning to construct the layers since higher layers only utilize the functions 
+of lower layers. 
+ There  can  be  some  performance  overhead  associated  with  the  communication  between 
+layers. This is because each layer must pass data to the layer above it. 
+ 
+Micro-Kernel structure 
+Kernel is the core part of an operating system that manages system resources. It also acts as a bridge 
+between the application and hardware of the computer. It is one of the first programs loaded on 
+start-up (after the Bootloader).  
+ 
+A microkernel  is a type of  operating system kernel that is  designed to  provide only the most  basic 
+services  required  for  an  operating  system  to  function,  such  as  memory  management  and  process 
+scheduling.  Other  services,  such  as  device  drivers  and  file  systems,  are  implemented  as  user-level 
+processes that communicate with the microkernel via message passing. Ex:Mac OS 
+
+ 
+Advantages of Micro-kernel structure: 
+ It allows the operating system to be portable between platforms. 
+ Enhanced system stability and security. 
+ As each Micro-Kernel is isolated, it is safe and trustworthy. 
+ Because Micro-Kernels are smaller, they can be successfully tested. 
+ If any component or Micro-Kernel fails, the remaining operating System is 
+unaffected and continues to function normally. 
+Disadvantages of Micro-kernel structure: 
+ Increased inter-module communication reduces system performance. 
+ System is complex to be constructed. 
+ Complexity in managing user-space components. 
+ 
+Modular Structure 
+In a modular operating system structure, the operating system is divided into a set of independent 
+modules.  Each  module  is  responsible  for  a  specific  task,  such  as  memory  management,  process 
+scheduling,    or    device    drivers.    Modules    can    be    loaded    and    unloaded dynamically,    as 
+needed.EX:Solaris 
+
+ 
+Advantages of Modular Structure 
+ A modular structure is highly modular, meaning that each module is independent of the 
+others. This makes it easier to understand, develop, and maintain the operating system. 
+ A modular structure is very flexible. New modules can be added easily, and existing 
+modules can be modified or removed without affecting the rest of the operating system. 
+Disadvantages of Modular Structure 
+ There can be some performance overhead associated with the communication between 
+modules. This is because modules must communicate with each other through well-
+defined interfaces. 
+ A modular structure can  be more complex than other types of  operating system 
+structures. This is because the modules must be carefully designed to ensure that they 
+interact correctly 
+Hybrid Structure 
+Hybrid Structure as the name suggests consists of a hybrid of all the Structure explained so far and 
+hence  it  has  properties  of  all  of  those  architectures  which  makes  it  highly  useful  in  present-day 
+operating systems. The hybrid-Structure consists of three layers. 
+1) Hardware abstraction layer: It is the interface between the kernel and hardware and is present 
+at the lowest level. 
+2) Microkernel Layer: This  is the  old microkernel that we know and it consists of CPU scheduling, 
+memory management, and inter-process communication. 
+
+3)  Application  Layer: It  acts  as  an  interface  between  the user  and  the microkernel.  It  contains 
+functionalities like a file server, error detection, I/O device management, etc. 
+ Example: Microsoft  Windows NT  kernel implements  a  hybrid  architecture  of  the  operating 
+system. 
+ 
+Advantages: 
+1. Since  it  is  a  hybrid  of  other structures it  allows  various structures to  provide  their 
+services respectively. 
+2. It is easy to manage because it uses a layered approach. 
+3. The number of layers is relatively lesser. 
+4. Security and protection are relatively improved. 
+Disadvantage: 
+1. It increases overall complexity of system by implementing both structure (monolithic and 
+micro) and making the system difficult to understand. 
+ 

@@ -6,6 +6,7 @@ const session = require('express-session');
 const mongoose = require( "mongoose" );
 const path = require("path");
 const cors = require( 'cors' );
+const jwt = require('./jwt');
 
 const dotenv = require( "dotenv" );
 dotenv.config();
@@ -15,8 +16,14 @@ app.use(express.json());
 
 app.use(cors({credentials:true, origin:'http://localhost:3000'}));
 
-
+//Routes
 app.use("/api",allroutes);
+
+///Protected route example
+// app.get('/api/protected',jwt.authenticateToken,(req,res)=>{
+//     res.json({message:"Access gramted"});
+// });
+
 ////api/////////////////////////////////////////
 app.use("/",async(req,res)=>{
     res.send("wellcome to dune university");

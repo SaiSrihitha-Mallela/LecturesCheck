@@ -2,7 +2,7 @@
 import './App.css';
 import {Routes, Route} from "react-router-dom";
 import LoginForm from './components/LoginForm';
-import Home from './components/Home';
+
 import UploadPDF from './components/UploadPDF';
 // import Unit1 from './components/Units/Unit1';
 import UploadVideo from './components/UploadVideo';
@@ -16,17 +16,14 @@ import Unit4 from './components/Units/Unit4';
 import Unit5 from './components/Units/Unit5';
 import ADE from './components/subjects/Subject/ADE';
 import IML from './components/subjects/Subject/IML';
-
-
-
-
-
-
-
-
+import ProtectedRoutes from './components/ProtectedRoutes';
+import Home from './components/Home';
+import RelevanceChart from './components/RelevanceChart';
 
 
 function App() {
+  // Replace this with your actual authentication logic
+  const isAuthenticated = true; // or fetch from your authentication provider
   return (
     <div className="App">
      
@@ -34,11 +31,10 @@ function App() {
 
       <Routes>
 
-        
-        <Route path='/uploadpdf' element={<UploadPDF/>}/>
         <Route path='/' element={<LoginForm/>}/>
-        <Route path='/home' element={<Home/>}/>
-
+        {/* <Route element={<ProtectedRoutes isAuthenticated={isAuthenticated}/>}/> */}
+        <Route path='/Home' element={<Home/>}/>
+        <Route path='/uploadpdf' element={<UploadPDF/>}/>
         <Route path='/uploadvideo' element={<UploadVideo/>}/>
         <Route path='/firstsem' element={<FirstSem/>}/>
         <Route path="/secondsem" element={<SecondSem/>}/>
@@ -50,17 +46,9 @@ function App() {
         <Route path='/unit3' element={<Unit3/>}/>
         <Route path='/unit4' element={<Unit4/>}/>
         <Route path='/unit5' element={<Unit5/>}/>
-        
-        
-       
-        
-      
-       
-        
+        <Route path='/relavance' element={<RelevanceChart/>}/>
 
         
-        
-
       </Routes>
     </div>
 

@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import axios from "axios";
 
 const LoginForm = () => {
@@ -7,7 +7,7 @@ const LoginForm = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    
+
 
     const handleUsernameChange = (event) => {
         setUsername(event.target.value);
@@ -17,16 +17,15 @@ const LoginForm = () => {
         setPassword(event.target.value);
     };
 
-    const handleSubmit = async(event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();//// it will prevent whole page to reload when this event is occured 
-        try{
-            const response = await axios.post("http://localhost:5000/api/login",{username,password});
+        try {
+            const response = await axios.post("http://localhost:5000/api/login", { username, password });
             console.log(response.data);
-            localStorage.setItem('token',response.data.token);
+            localStorage.setItem('token', response.data.token);
             window.location.href = '/home';
 
-        }catch(error)
-        {
+        } catch (error) {
             console.error("login error:", error.response.data.message);
             window.alert("invalid  username or password");
             // window.alert("invalid username or password");
@@ -51,40 +50,40 @@ const LoginForm = () => {
                     </a>
                 </div>
             </nav>
-            
+
             <div className="container-fluid h-100 d-flex align-items-center justify-content-center pt-5 mt-5">
                 <div className="card pt-4" style={{ width: '380px', height: '380px', boxShadow: "0 8px 10px 0 rgba(0, 0, 0, 0.1)" }}>
-                                <div className="card-body">
-                                    <h2 className="card-title">Login</h2>
-                                    <br></br>
-                                    
-                                    <form onSubmit={handleSubmit}>
-                                        <div className="form-group">
-                                            <label>Username:</label>
-                                            <br></br>
-                                            <input type="text" className="form-control" value={username} onChange={handleUsernameChange} />
-                                        </div>
-                                        <br></br>
-                                        <div className="form-group">
-                                            <label>Password:</label>
-                                            <br></br>
-                                            <input type={showPassword ? 'text' : 'password'} className="form-control" value={password} onChange={handlePasswordChange} />
-                                            <input type="checkbox" onChange={handleTogglePassword} /> Show Password
-                                        </div>
-                                        <br>
-                                        </br>
-                                        <button type="submit" className="btn btn-dark" >LOGIN</button>
-                                        
-                                    </form>
-                                    {/* {error && <p className="text-danger">{error}</p>} */}
-                                </div>
+                    <div className="card-body">
+                        <h2 className="card-title">Login</h2>
+                        <br></br>
+
+                        <form onSubmit={handleSubmit}>
+                            <div className="form-group">
+                                <label>Username:</label>
+                                <br></br>
+                                <input type="text" className="form-control" value={username} onChange={handleUsernameChange} />
                             </div>
-                        </div>
+                            <br></br>
+                            <div className="form-group">
+                                <label>Password:</label>
+                                <br></br>
+                                <input type={showPassword ? 'text' : 'password'} className="form-control" value={password} onChange={handlePasswordChange} />
+                                <input type="checkbox" onChange={handleTogglePassword} /> Show Password
+                            </div>
+                            <br>
+                            </br>
+                            <button type="submit" className="btn btn-dark" >LOGIN</button>
+
+                        </form>
+                        {/* {error && <p className="text-danger">{error}</p>} */}
+                    </div>
+                </div>
+            </div>
 
         </div>
 
 
-                     
+
     );
 };
 

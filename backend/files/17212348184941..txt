@@ -1,0 +1,76 @@
+
+
+A computer system is divided into two categories: Hardware and Software.  
+Hardware refers to the physical and visible components of the system such as a monitor, CPU, 
+keyboard and mouse.  
+Software, on the other hand, refers to a set of instructions which enable the hardware to perform 
+a specific set of tasks. 
+ 
+ 
+ 
+Types of Computer Software 
+ System Software 
+ Application Software 
+System Software: System Software is a component of Computer Software that directly operates 
+with Computer Hardware which has the work to control the Computer’s Internal Functioning and 
+also takes responsibility for controlling Hardware Devices such as Printers, Storage Devices, etc. 
+Types of System Software include Operating systems, Language processors, and Device Drivers. 
+Application Software: Application Software are the software that works the basic operations of 
+the computer. It performs a specific task for users. Application Software basically includes Word 
+Processors, Spreadsheets, etc. Types of Application software include General Purpose Software, 
+Customized Software, etc. 
+ 
+Definition: 
+Operating System can be defined as a system software which acts as an interface between user and 
+the hardware. It manages all other applications and programs in a computer, and it is loaded into 
+the computer by a boot program. 
+
+ 
+ 
+Operating System Objectives 
+ To make the computer system convenient to use in an efficient manner. 
+ To hide the details of the hardware resources from the users. 
+ To provide users a convenient interface to use the computer system. 
+ To act as an intermediary between the hardware and its users, making it easier for the 
+users to access and use other resources. 
+ To manage the resources of a computer system. 
+ To  keep  track  of  who  is  using  which  resource,  granting  resource  requests,  and 
+mediating conflicting requests from different programs and users. 
+ To provide efficient and fair sharing of resources among users and programs. 
+ 
+User View and System View 
+The  operating  system  can  be  observed  from  the  point  of  view  of  the  user  or  the  system.  This  is 
+known  as  the  user  view  and  the  system  view  respectively.  More  details  about  these  are  given  as 
+follows −
+ 
+User View: 
+
+The user view depends on the system interface that is used by the users. The different types of 
+user view experiences can be explained as follows − 
+ If the user is using a personal computer, the operating system is largely designed to make 
+the interaction easy. Some attention is also paid to the performance of the system, but there is no 
+need for the operating  system  to  worry  about  resource  utilization.  This  is  because the personal 
+computer uses all the resources available and there is no sharing. 
+ If the user is using a system connected to a mainframe or a minicomputer, the operating 
+system  is  largely  concerned  with  resource  utilization.  This  is  because  there  may  be  multiple 
+terminals connected to the mainframe and the operating system makes sure that all the resources 
+such as CPU,memory, I/O devices etc. are divided uniformly between them. 
+ If  the user  is  sitting on a workstation connected to  other  workstations  through  networks, 
+then the operating system needs to focus on both individual usage of resources and sharing though 
+the network. This happens because the workstation exclusively uses its own resources but it also 
+needs to share files etc. with other workstations across the network. 
+ If the user is using a handheld computer such as a mobile, then the operating system handles 
+the usability of the device including a few remote operations. The battery level of the device is also 
+taken into account. 
+ There are some devices that contain very less or no user view because there is no interaction 
+with the users. Examples are embedded computers in home devices, automobiles etc. 
+System View: 
+From the System point of view the operating system is the program which is most intermediate 
+with the hardware.  
+ The system views the operating system as a resource allocator. There are many resources such 
+as CPU time, memory space, file storage space, I/O devices etc. that are required by processes for 
+execution.  It  is  the  duty  of  the  operating  system  to  allocate  these  resources  judiciously  to  the 
+processes so that the computer system can run as smoothly as possible. 
+ The operating system can also work as a control program. It manages all the processes and I/O 
+devices so that the computer system works smoothly and there are no errors. It makes sure that 
+the I/O devices work in a proper manner without creating problems. 

@@ -10,15 +10,13 @@ const ffmpeg = require("fluent-ffmpeg");
 const axios = require("axios");
 const FormData = require("form-data");
 
-
 const allroutes = express.Router();
 
 allroutes.use(express.json());
 allroutes.use("/files", express.static("files"));
 allroutes.use("/videos", express.static("videos"));
 
-ffmpeg.setFfmpegPath('C:/ffmpeg/ffmpeg-master-latest-win64-gpl/ffmpeg-master-latest-win64-gpl/bin/ffmpeg.exe'); // Adjust the path as needed); // Adjust the path as needed
-
+ffmpeg.setFfmpegPath('C:/ffmpeg/ffmpeg-master-latest-win64-gpl/ffmpeg-master-latest-win64-gpl/bin/ffmpeg.exe');// Adjust the path as needed
 const convertPdfToText = async (pdfPath) => {
     try {
         const dataBuffer = fs.readFileSync(pdfPath);
@@ -94,25 +92,25 @@ const transcribeAudioToText = async (audioUrl) => {
         while (true) {
             const transcriptResponse = await axios.get(`https://api.assemblyai.com/v2/transcript/${transcriptId}`, {
                 headers: {
-                "authorization": "443e85486085485189193ac8a9867902",
-            },
+                    "authorization": "443e85486085485189193ac8a9867902",
+                },
             });
-        transcript = transcriptResponse.data;
+            transcript = transcriptResponse.data;
 
-        if (transcript.status === "completed") {
-            break;
-        } else if (transcript.status === "failed") {
-            throw new Error("Transcription failed");
+            if (transcript.status === "completed") {
+                break;
+            } else if (transcript.status === "failed") {
+                throw new Error("Transcription failed");
+            }
+
+            await new Promise((resolve) => setTimeout(resolve, 5000));
         }
 
-        await new Promise((resolve) => setTimeout(resolve, 5000));
-    }
-
         return transcript.text;
-} catch (error) {
-    console.error("Error transcribing audio to text:", error);
-    throw error;
-}
+    } catch (error) {
+        console.error("Error transcribing audio to text:", error);
+        throw error;
+    }
 };
 
 const sendFilesToFlaskServer = async (pdfTextFilePath, videoTextFilePath, endpoint) => {
@@ -125,17 +123,12 @@ const sendFilesToFlaskServer = async (pdfTextFilePath, videoTextFilePath, endpoi
             headers: formData.getHeaders()
         });
 
-    return response.data.similarity;
-} catch (error) {
-    console.error("Error sending files to Flask server:", error);
-    throw error;
-}
+        return response.data.similarity;
+    } catch (error) {
+        console.error("Error sending files to Flask server:", error);
+        throw error;
+    }
 };
-
-allroutes.get("/", (req, res) => {
-    console.log("reached root");
-    res.send("welcome to dune lms");
-});
 
 // Login route
 allroutes.post("/login", async (req, res) => {
@@ -197,8 +190,10 @@ allroutes.post("/uploadfiles", upload.single("file"), async (req, res) => {
         req.app.locals.pdfTextFilePath = outputTextFilePath;
 
         // Check if both files are available for sending to Flask server
+        let a = 60;
         if (req.app.locals.videoTextFilePath) {
             const similarity = await sendFilesToFlaskServer(req.app.locals.pdfTextFilePath, req.app.locals.videoTextFilePath, "calculate_similarity");
+            req.app.locals.similarity = similarity * 100;
             res.json({ status: "ok", similarity: similarity });
             console.log("similarity:", similarity);
         } else {
@@ -209,6 +204,8 @@ allroutes.post("/uploadfiles", upload.single("file"), async (req, res) => {
         res.status(500).json({ status: "error", message: "Failed to upload file" });
     }
 });
+
+
 
 allroutes.get("/getfiles", async (req, res) => {
     try {
@@ -235,8 +232,9 @@ const uploadStorage = multer.diskStorage({
 });
 
 const uploadVideo = multer({ storage: uploadStorage });
-
 allroutes.post("/uploadvideos", uploadVideo.single("file"), async (req, res) => {
+
+
     console.log(req.file);
     const title = req.body.title;
     const fileName = req.file.filename;
@@ -262,14 +260,32 @@ allroutes.post("/uploadvideos", uploadVideo.single("file"), async (req, res) => 
         // Check if both files are available for sending to Flask server
         if (req.app.locals.pdfTextFilePath) {
             const similarity = await sendFilesToFlaskServer(req.app.locals.pdfTextFilePath, req.app.locals.videoTextFilePath, "calculate_similarity");
+            req.app.locals.similarity = similarity * 100;
             res.json({ status: "ok", similarity: similarity });
-
+            console.log("similarity:", similarity);
         } else {
             res.json({ status: "ok", message: "Video uploaded and processed" });
         }
     } catch (error) {
         console.error("Error uploading video:", error);
         res.status(500).json({ status: "error", message: "Failed to upload video" });
+    }
+});
+
+
+allroutes.get('/calculate_similarity', async (req, res) => {
+
+    try {
+        const similarity = req.app.locals.similarity; // Ensure this has the correct value
+        console.log('Similarity score:', similarity); // Debugging line
+        if (similarity !== undefined) {
+            res.json({ similarity });
+        } else {
+            res.status(404).json({ error: 'Similarity score not found' });
+        }
+    } catch (error) {
+        console.error('Error fetching similarity score:', error);
+        res.status(500).json({ error: 'Failed to fetch similarity score' });
     }
 });
 
